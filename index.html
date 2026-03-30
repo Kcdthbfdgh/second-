@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Base Transformation</title>
+<title>Трансформация</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -15,17 +15,15 @@ body {
     color: #fff;
 }
 
-/* HERO */
 .hero {
     text-align: center;
     padding: 100px 20px 60px;
-    animation: fadeIn 1.2s ease forwards;
+    animation: fadeIn 1.2s ease;
 }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 52px;
-    margin-bottom: 10px;
+    font-size: 46px;
 }
 
 .hero p {
@@ -34,55 +32,36 @@ body {
     margin: auto;
 }
 
-/* AUTHOR */
-.author {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 25px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.8s ease;
-}
-
-.author.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* CONTAINER */
 .container {
     max-width: 900px;
     margin: auto;
     padding: 20px;
 }
 
-/* CARD */
-.card {
+.block {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
-    padding: 20px;
     border-radius: 14px;
+    padding: 20px;
     margin-bottom: 20px;
-    transition: 0.4s ease;
+    transition: 0.4s;
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
 }
 
-.card.visible {
+.block.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.card:hover {
+.block:hover {
     background: rgba(255,255,255,0.07);
-    transform: scale(1.02);
 }
 
-/* DETAILS */
+h2 {
+    margin-bottom: 10px;
+}
+
 details {
     margin-top: 10px;
 }
@@ -90,57 +69,20 @@ details {
 summary {
     cursor: pointer;
     font-weight: 600;
-    transition: 0.3s;
-}
-
-summary:hover {
-    color: #ccc;
 }
 
 .practice {
     margin-top: 10px;
     color: #aaa;
     font-size: 14px;
-    animation: fadeIn 0.5s ease;
+    line-height: 1.6;
 }
 
-/* FORMULA */
-.formula {
-    text-align: center;
-    margin: 60px 0;
-    font-size: 20px;
+.question {
+    margin-top: 8px;
     color: #ddd;
-    opacity: 0;
-    transform: scale(0.95);
-    transition: 1s ease;
 }
 
-.formula.visible {
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* CTA */
-.cta {
-    text-align: center;
-    margin: 60px 0;
-}
-
-.cta a {
-    text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #ffffff, #888);
-    color: #000;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.cta a:hover {
-    transform: scale(1.05);
-}
-
-/* FOOTER */
 .footer {
     text-align: center;
     padding: 40px;
@@ -148,16 +90,9 @@ summary:hover {
     font-size: 13px;
 }
 
-/* ANIMATIONS */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
@@ -165,123 +100,172 @@ summary:hover {
 <body>
 
 <section class="hero">
-    <h1>Base Transformation</h1>
-    <p>Авторская система внутреннего изменения через осознание, выбор и действие</p>
-</section>
-
-<section class="author" id="author">
-    <h3>Автор</h3>
-    <p>
-        Проект создан Зайцевой Валерией — специалистом в области маркетинга, дизайна и системного мышления.  
-        Подход объединяет структурное мышление и практики самонаблюдения для формирования устойчивых внутренних изменений.
-    </p>
+    <h1>Что делать, чтобы стать той самой девушкой?</h1>
+    <p>Спокойной, уверенной, осознанной. Через маленькие шаги, которые формируют твою новую внутреннюю реальность.</p>
 </section>
 
 <div class="container">
 
-    <div class="card">
-        <h2>01 — Осознание</h2>
-        <p>Фиксация мыслей и реальности без искажений.</p>
+    <!-- 1 -->
+    <div class="block">
+        <h2>🌱 Осознанность и наблюдение</h2>
+        <p>Ты начинаешь замечать свои мысли, реакции и состояния без оценки.</p>
+
         <details>
-            <summary>Практики</summary>
+            <summary>Практика мини-коучинга</summary>
             <div class="practice">
-                • Запиши 10 мыслей за день<br>
-                • Найди повторяющиеся паттерны<br>
-                • Отслеживай автоматические реакции<br>
-                • Наблюдай без оценки
+                В течение дня фиксируй свои мысли и состояния.
+
+                <div class="question">
+                • Какие мысли чаще всего приходят автоматически?<br>
+                • В какие моменты ты испытываешь тревогу или сомнение?<br>
+                • Что запускает эти состояния?<br>
+                </div>
+
+                Задание:
+                <br>— Вечером запиши 5–10 мыслей за день  
+                <br>— Отметь повторяющиеся паттерны  
+                <br>— Не оценивай — только наблюдай  
+
+                <br><br>Цель: научиться видеть себя со стороны.
             </div>
         </details>
     </div>
 
-    <div class="card">
-        <h2>02 — Отделение</h2>
-        <p>Мысли ≠ факты. Формирование наблюдателя.</p>
+    <!-- 2 -->
+    <div class="block">
+        <h2>🪞 Отделение себя от мыслей</h2>
+        <p>Мысли — это процесс, а не твоя сущность.</p>
+
         <details>
-            <summary>Практики</summary>
+            <summary>Практика мини-коучинга</summary>
             <div class="practice">
-                • Проверяй: факт или интерпретация<br>
-                • Замедляй реакцию<br>
-                • Разделяй себя и мысль<br>
-                • Наблюдай автоматизм
+
+                <div class="question">
+                • Это факт или интерпретация?<br>
+                • Я сейчас реагирую автоматически или осознанно?<br>
+                • Что произойдёт, если я не поверю этой мысли?<br>
+                </div>
+
+                Задание:
+                <br>— В момент тревоги сделай паузу  
+                <br>— Назови мысль как объект: «я замечаю мысль, что…»  
+                <br>— Отдели себя от неё  
+
+                <br><br>Цель: выйти из автоматического реагирования.
             </div>
         </details>
     </div>
 
-    <div class="card">
-        <h2>03 — Сценарий</h2>
-        <p>Выявление базовых установок.</p>
+    <!-- 3 -->
+    <div class="block">
+        <h2>🌸 Внутренний сценарий</h2>
+        <p>Твои убеждения формируют твою реальность.</p>
+
         <details>
-            <summary>Практики</summary>
+            <summary>Практика мини-коучинга</summary>
             <div class="practice">
-                • Что я думаю о себе?<br>
-                • Какая мысль повторяется чаще всего?<br>
-                • Какие убеждения ограничивают<br>
-                • Запиши внутренний сценарий
+
+                <div class="question">
+                • Как я описываю себя в голове?<br>
+                • Какие убеждения ограничивают меня?<br>
+                • Какие повторяющиеся истории я себе рассказываю?<br>
+                </div>
+
+                Задание:
+                <br>— Выпиши свои ключевые убеждения  
+                <br>— Раздели их на поддерживающие и ограничивающие  
+                <br>— Выбери 1 убеждение для трансформации  
+
+                <br><br>Цель: увидеть свою внутреннюю программу.
             </div>
         </details>
     </div>
 
-    <div class="card">
-        <h2>04 — Выбор</h2>
-        <p>Формирование новой идентичности.</p>
+    <!-- 4 -->
+    <div class="block">
+        <h2>💫 Выбор новой версии себя</h2>
+        <p>Ты формируешь себя через выбор и поведение.</p>
+
         <details>
-            <summary>Практики</summary>
+            <summary>Практика мини-коучинга</summary>
             <div class="practice">
-                • Кем я выбираю быть?<br>
-                • Как действует эта версия меня?<br>
-                • Определи поведение новой модели<br>
-                • Зафиксируй внутреннюю позицию
+
+                <div class="question">
+                • Как ведёт себя моя лучшая версия?<br>
+                • Какие решения она принимает?<br>
+                • Как она думает и реагирует?<br>
+                </div>
+
+                Задание:
+                <br>— Опиши свою «версию 2.0»  
+                <br>— Определи её поведение  
+                <br>— Начни действовать как она в маленьких ситуациях  
+
+                <br><br>Цель: начать жить из новой идентичности.
             </div>
         </details>
     </div>
 
-    <div class="card">
-        <h2>05 — Действие</h2>
-        <p>Подтверждение через практику.</p>
+    <!-- 5 -->
+    <div class="block">
+        <h2>🌿 Действие и привычки</h2>
+        <p>Изменения закрепляются только через повторение.</p>
+
         <details>
-            <summary>Практики</summary>
+            <summary>Практика мини-коучинга</summary>
             <div class="practice">
-                • Выполни 1 действие<br>
-                • Повтори 3 дня подряд<br>
-                • Не откладывай анализ<br>
-                • Действуй до уверенности
+
+                <div class="question">
+                • Какие действия подтверждают мою новую версию?<br>
+                • Что я могу делать ежедневно, чтобы поддерживать энергию?<br>
+                </div>
+
+                Привычки:
+                <br>— 10 минут движения в день  
+                <br>— спорт / йога / растяжка  
+                <br>— полезные напитки (например, смузи)  
+                <br>— постепенное внедрение 1 новой привычки в месяц  
+
+                <br><br>Цель: стабильность через маленькие шаги.
             </div>
         </details>
     </div>
 
-    <div class="card">
-        <h2>06 — Закрепление</h2>
-        <p>Стабилизация новой системы поведения.</p>
+    <!-- 6 -->
+    <div class="block">
+        <h2>📖 Закрепление и анализ</h2>
+        <p>Рефлексия усиливает осознанность и рост.</p>
+
         <details>
-            <summary>Практики</summary>
+            <summary>Практика мини-коучинга</summary>
             <div class="practice">
-                • Веди дневник наблюдений<br>
-                • Отслеживай изменения мышления<br>
-                • Укрепляй привычки<br>
-                • Повторяй цикл регулярно
+
+                <div class="question">
+                • Что сегодня получилось?<br>
+                • Где я действовала осознанно?<br>
+                • Что вызвало сложности?<br>
+                • Что я могу улучшить завтра?<br>
+                </div>
+
+                Задание:
+                <br>— В конце дня записывай ответы  
+                <br>— Отслеживай динамику  
+                <br>— Замечай прогресс  
+
+                <br><br>Цель: формирование внутренней устойчивости.
             </div>
         </details>
-    </div>
-
-    <div class="formula" id="formula">
-        Осознание → Отделение → Сценарий → Выбор → Действие → Закрепление
-    </div>
-
-    <div class="cta">
-        <a href="https://www.instagram.com/zaitseva_valeria_?igsh=MWV6ZTljNHM4cGZ6dw%3D%3D&utm_source=qr" target="_blank">
-            Перейти в Instagram
-        </a>
     </div>
 
 </div>
 
 <div class="footer">
-    Авторский гайд внутренней трансформации
+    Авторский гайд трансформации
 </div>
 
 <script>
-// Intersection Observer for animations
-const elements = document.querySelectorAll('.card, .author, .formula');
+const blocks = document.querySelectorAll('.block');
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -291,7 +275,7 @@ const observer = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.2 });
 
-elements.forEach(el => observer.observe(el));
+blocks.forEach(b => observer.observe(b));
 </script>
 
 </body>
