@@ -3,23 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Fitness Tracker by Valeria Zaitseva</title>
+<title>Luxury Fitness System by Valeria Zaitseva</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #000;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
     color: #fff;
 }
 
 .hero {
     text-align: center;
-    padding: 60px 20px;
+    padding: 70px 20px;
 }
 
 .container {
@@ -36,32 +34,19 @@ body {
 }
 
 .exercise {
-    margin: 10px 0;
     padding: 12px;
-    background: rgba(255,255,255,0.03);
+    margin: 10px 0;
     border-radius: 10px;
+    background: rgba(255,255,255,0.03);
 }
 
 .exercise.done {
     background: rgba(0,255,150,0.1);
 }
 
-.progress-bar {
-    height: 6px;
-    background: #222;
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-
-.progress {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg,#00ff99,#00ccff);
-}
-canvas {
-    background: #111;
-    border-radius: 12px;
-    padding: 10px;
+.small {
+    font-size: 13px;
+    color: #aaa;
 }
 </style>
 </head>
@@ -69,166 +54,177 @@ canvas {
 <body>
 
 <div class="hero">
-    <h1>Luxury Fitness Tracker</h1>
+    <h1>Luxury Fitness System</h1>
     <p>Автор: Valeria Zaitseva</p>
+    <p>Женственность • сила • осанка • эстетика • контроль</p>
 </div>
 
 <div class="container">
 
-<h2>📊 Progress Overview</h2>
-<canvas id="progressChart"></canvas>
+<!-- 1 -->
+<div class="block">
+<h2>Workout 1 — Full Body Activation</h2>
 
-<!-- TEMPLATE BLOCK EXAMPLE -->
-<div class="block" data-block="w1">
-<h2>Workout 1 — Full Body Foundation</h2>
-<div class="progress-bar"><div class="progress"></div></div>
-
-<div class="exercise" data-id="w1-1">
-<input type="checkbox">
-Goblet Squat (10–15 reps)<br>
-<small>Цель: ягодицы, квадрицепсы, базовая сила ног</small>
+<div class="exercise"><input type="checkbox"> Goblet Squat<br><span class="small">Ягодицы, ноги (10–15)</span></div>
+<div class="exercise"><input type="checkbox"> Lat Pulldown<br><span class="small">Спина, осанка (8–12)</span></div>
+<div class="exercise"><input type="checkbox"> Dumbbell Bench Press<br><span class="small">Грудь (8–12)</span></div>
+<div class="exercise"><input type="checkbox"> Dumbbell Row<br><span class="small">Спина (8–12)</span></div>
+<div class="exercise"><input type="checkbox"> Step-Up<br><span class="small">Ягодицы (10–12)</span></div>
+<div class="exercise"><input type="checkbox"> Shoulder Press<br><span class="small">Плечи (8–12)</span></div>
+<div class="exercise"><input type="checkbox"> Triceps Pushdown<br><span class="small">Трицепс (10–15)</span></div>
+<div class="exercise"><input type="checkbox"> Biceps Curl<br><span class="small">Бицепс (10–15)</span></div>
+<div class="exercise"><input type="checkbox"> Plank Shoulder Tap<br><span class="small">Кора (30–60 сек)</span></div>
+<div class="exercise"><input type="checkbox"> Hanging Knee Raise<br><span class="small">Пресс (10–15)</span></div>
 </div>
 
-<div class="exercise" data-id="w1-2">
-<input type="checkbox">
-Lat Pulldown (8–12 reps)<br>
-<small>Цель: широчайшие мышцы спины</small>
+<!-- 2 -->
+<div class="block">
+<h2>Workout 2 — Lower Body Sculpt</h2>
+
+<div class="exercise"><input type="checkbox"> Bulgarian Split Squat<br><span class="small">Ягодицы (8–12)</span></div>
+<div class="exercise"><input type="checkbox"> Romanian Deadlift<br><span class="small">Задняя поверхность бедра (8–12)</span></div>
+<div class="exercise"><input type="checkbox"> Hip Thrust<br><span class="small">Ягодицы (10–15)</span></div>
+<div class="exercise"><input type="checkbox"> Leg Press<br><span class="small">Ноги (10–15)</span></div>
+<div class="exercise"><input type="checkbox"> Step-Up Slow<br><span class="small">Баланс (10–12)</span></div>
+<div class="exercise"><input type="checkbox"> Cable Kickback<br><span class="small">Изоляция ягодиц (12–15)</span></div>
+<div class="exercise"><input type="checkbox"> Sumo Squat<br><span class="small">Внутренняя поверхность бедра (10–15)</span></div>
+<div class="exercise"><input type="checkbox"> Wall Sit<br><span class="small">Выносливость (60 сек)</span></div>
+<div class="exercise"><input type="checkbox"> Jump Squat<br><span class="small">Взрывная сила (10–12)</span></div>
+<div class="exercise"><input type="checkbox"> Calf Raises<br><span class="small">Икры (15–20)</span></div>
 </div>
 
-<div class="exercise" data-id="w1-3">
-<input type="checkbox">
-Dumbbell Bench Press (8–12 reps)<br>
-<small>Цель: грудные мышцы, сила верхней части тела</small>
+<!-- 3 -->
+<div class="block">
+<h2>Workout 3 — Upper Tone</h2>
+
+<div class="exercise"><input type="checkbox"> Assisted Pull-Ups<br><span class="small">Спина (8–10)</span></div>
+<div class="exercise"><input type="checkbox"> Incline Dumbbell Press<br><span class="small">Грудь (8–12)</span></div>
+<div class="exercise"><input type="checkbox"> Seated Row<br><span class="small">Спина (10–12)</span></div>
+<div class="exercise"><input type="checkbox"> Lateral Raises<br><span class="small">Плечи (12–15)</span></div>
+<div class="exercise"><input type="checkbox"> Face Pull<br><span class="small">Осанка (12–15)</span></div>
+<div class="exercise"><input type="checkbox"> EZ Curl<br><span class="small">Бицепс (10–12)</span></div>
+<div class="exercise"><input type="checkbox"> Triceps Extension<br><span class="small">Трицепс (10–15)</span></div>
+<div class="exercise"><input type="checkbox"> Push-Ups<br><span class="small">Грудь (до отказа)</span></div>
+<div class="exercise"><input type="checkbox"> Rear Delt Fly<br><span class="small">Задняя дельта (12–15)</span></div>
+<div class="exercise"><input type="checkbox"> Plank<br><span class="small">Кора (60 сек)</span></div>
 </div>
 
-<div class="exercise" data-id="w1-4">
-<input type="checkbox">
-Dumbbell Row (8–12 reps)<br>
-<small>Цель: середина спины, осанка</small>
+<!-- 4 -->
+<div class="block">
+<h2>Workout 4 — Core & Waist</h2>
+
+<div class="exercise"><input type="checkbox"> Crunch<br><span class="small">Пресс (15–20)</span></div>
+<div class="exercise"><input type="checkbox"> Leg Raises<br><span class="small">Низ пресса (12–15)</span></div>
+<div class="exercise"><input type="checkbox"> Russian Twist<br><span class="small">Косые (20)</span></div>
+<div class="exercise"><input type="checkbox"> Bicycle Crunch<br><span class="small">Пресс (20)</span></div>
+<div class="exercise"><input type="checkbox"> Plank<br><span class="small">Стабилизация (60 сек)</span></div>
+<div class="exercise"><input type="checkbox"> Side Plank<br><span class="small">Косые (30 сек)</span></div>
+<div class="exercise"><input type="checkbox"> Dead Bug<br><span class="small">Глубокий кор (12–15)</span></div>
+<div class="exercise"><input type="checkbox"> Mountain Climbers<br><span class="small">Кардио + пресс</span></div>
+<div class="exercise"><input type="checkbox"> Hollow Hold<br><span class="small">Кор (30–40 сек)</span></div>
+<div class="exercise"><input type="checkbox"> Ab Rollout<br><span class="small">Сильный пресс (10–12)</span></div>
 </div>
 
-<div class="exercise" data-id="w1-5">
-<input type="checkbox">
-Step-Up (10–12 reps)<br>
-<small>Цель: баланс, ягодицы</small>
+<!-- 5 -->
+<div class="block">
+<h2>Workout 5 — Glute Isolation</h2>
+<div class="exercise"><input type="checkbox"> Hip Thrust</div>
+<div class="exercise"><input type="checkbox"> Glute Bridge</div>
+<div class="exercise"><input type="checkbox"> Cable Kickback</div>
+<div class="exercise"><input type="checkbox"> Donkey Kicks</div>
+<div class="exercise"><input type="checkbox"> Fire Hydrants</div>
+<div class="exercise"><input type="checkbox"> Sumo Squat</div>
+<div class="exercise"><input type="checkbox"> Step-Up</div>
+<div class="exercise"><input type="checkbox"> Bulgarian Split Squat</div>
+<div class="exercise"><input type="checkbox"> Frog Pumps</div>
+<div class="exercise"><input type="checkbox"> Wall Sit</div>
 </div>
 
-<div class="exercise" data-id="w1-6">
-<input type="checkbox">
-Shoulder Press (8–12 reps)<br>
-<small>Цель: плечи</small>
+<!-- 6 -->
+<div class="block"><h2>Workout 6 — Lower Strength</h2>
+<div class="exercise"><input type="checkbox"> Squat</div>
+<div class="exercise"><input type="checkbox"> RDL</div>
+<div class="exercise"><input type="checkbox"> Leg Press</div>
+<div class="exercise"><input type="checkbox"> Lunges</div>
+<div class="exercise"><input type="checkbox"> Hip Thrust</div>
+<div class="exercise"><input type="checkbox"> Step-Up</div>
+<div class="exercise"><input type="checkbox"> Calf Raises</div>
+<div class="exercise"><input type="checkbox"> Kickback</div>
+<div class="exercise"><input type="checkbox"> Sumo Squat</div>
+<div class="exercise"><input type="checkbox"> Wall Sit</div>
 </div>
 
-<div class="exercise" data-id="w1-7">
-<input type="checkbox">
-Triceps Pushdown (10–15 reps)<br>
-<small>Цель: трицепс</small>
+<!-- 7 -->
+<div class="block"><h2>Workout 7 — Upper Sculpt</h2>
+<div class="exercise"><input type="checkbox"> Chest Press</div>
+<div class="exercise"><input type="checkbox"> Row</div>
+<div class="exercise"><input type="checkbox"> Lat Pulldown</div>
+<div class="exercise"><input type="checkbox"> Lateral Raises</div>
+<div class="exercise"><input type="checkbox"> Face Pull</div>
+<div class="exercise"><input type="checkbox"> Curl</div>
+<div class="exercise"><input type="checkbox"> Triceps Pushdown</div>
+<div class="exercise"><input type="checkbox"> Rear Delt Fly</div>
+<div class="exercise"><input type="checkbox"> Push-Ups</div>
+<div class="exercise"><input type="checkbox"> Plank</div>
 </div>
 
-<div class="exercise" data-id="w1-8">
-<input type="checkbox">
-Biceps Curl (10–15 reps)<br>
-<small>Цель: бицепс</small>
+<!-- 8 -->
+<div class="block"><h2>Workout 8 — Core Stability</h2>
+<div class="exercise"><input type="checkbox"> Crunch</div>
+<div class="exercise"><input type="checkbox"> Leg Raise</div>
+<div class="exercise"><input type="checkbox"> Plank</div>
+<div class="exercise"><input type="checkbox"> Side Plank</div>
+<div class="exercise"><input type="checkbox"> Hollow Hold</div>
+<div class="exercise"><input type="checkbox"> Dead Bug</div>
+<div class="exercise"><input type="checkbox"> Russian Twist</div>
+<div class="exercise"><input type="checkbox"> Mountain Climbers</div>
+<div class="exercise"><input type="checkbox"> Bicycle</div>
+<div class="exercise"><input type="checkbox"> Rollout</div>
 </div>
 
-<div class="exercise" data-id="w1-9">
-<input type="checkbox">
-Plank Shoulder Tap (30–60 sec)<br>
-<small>Цель: кора, стабилизация</small>
+<!-- 9 -->
+<div class="block"><h2>Workout 9 — Functional Tone</h2>
+<div class="exercise"><input type="checkbox"> Squat</div>
+<div class="exercise"><input type="checkbox"> Lunges</div>
+<div class="exercise"><input type="checkbox"> Step-Up</div>
+<div class="exercise"><input type="checkbox"> Push-Ups</div>
+<div class="exercise"><input type="checkbox"> Row</div>
+<div class="exercise"><input type="checkbox"> Plank</div>
+<div class="exercise"><input type="checkbox"> Mountain Climbers</div>
+<div class="exercise"><input type="checkbox"> Glute Bridge</div>
+<div class="exercise"><input type="checkbox"> Jump Squat</div>
+<div class="exercise"><input type="checkbox"> Calf Raises</div>
 </div>
 
-<div class="exercise" data-id="w1-10">
-<input type="checkbox">
-Hanging Knee Raise (10–15 reps)<br>
-<small>Цель: нижний пресс</small>
-</div>
-
-</div>
-
-<!-- (СЖАТО: остальные тренировки аналогично структурируются) -->
-<div class="block" data-block="w2">
-<h2>Workout 2 — Lower Body Strength</h2>
-
-<div class="exercise" data-id="w2-1"><input type="checkbox"> Bulgarian Split Squat (8–12) <br><small>Ягодицы, баланс</small></div>
-<div class="exercise" data-id="w2-2"><input type="checkbox"> Romanian Deadlift (8–12)<br><small>Задняя поверхность бедра</small></div>
-<div class="exercise" data-id="w2-3"><input type="checkbox"> Hip Thrust (10–15)<br><small>Ягодицы</small></div>
-<div class="exercise" data-id="w2-4"><input type="checkbox"> Leg Press (10–15)<br><small>Квадрицепсы</small></div>
-<div class="exercise" data-id="w2-5"><input type="checkbox"> Step-Up (10–12)<br><small>Баланс</small></div>
-<div class="exercise" data-id="w2-6"><input type="checkbox"> Cable Kickback (12–15)<br><small>Ягодицы</small></div>
-<div class="exercise" data-id="w2-7"><input type="checkbox"> Sumo Squat (10–15)<br><small>Внутренняя поверхность бедра</small></div>
-<div class="exercise" data-id="w2-8"><input type="checkbox"> Wall Sit (60 sec)<br><small>Выносливость ног</small></div>
-<div class="exercise" data-id="w2-9"><input type="checkbox"> Jump Squat (10–12)<br><small>Взрывная сила</small></div>
-<div class="exercise" data-id="w2-10"><input type="checkbox"> Calf Raises (15–20)<br><small>Икры</small></div>
-
+<!-- 10 -->
+<div class="block"><h2>Workout 10 — Power & Conditioning</h2>
+<div class="exercise"><input type="checkbox"> Squat</div>
+<div class="exercise"><input type="checkbox"> Deadlift</div>
+<div class="exercise"><input type="checkbox"> Bench Press</div>
+<div class="exercise"><input type="checkbox"> Row</div>
+<div class="exercise"><input type="checkbox"> Pull-Ups</div>
+<div class="exercise"><input type="checkbox"> Shoulder Press</div>
+<div class="exercise"><input type="checkbox"> Lunges</div>
+<div class="exercise"><input type="checkbox"> Hip Thrust</div>
+<div class="exercise"><input type="checkbox"> Plank</div>
+<div class="exercise"><input type="checkbox"> Burpees</div>
 </div>
 
 </div>
 
 <script>
-const blocks = document.querySelectorAll(".block");
-
-function updateChart(data){
-    chart.data.datasets[0].data = data;
-    chart.update();
-}
-
-const ctx = document.getElementById('progressChart');
-
-let chart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ["W1","W2"],
-        datasets: [{
-            label: "Progress %",
-            data: [0,0]
-        }]
-    }
-});
-
-function updateProgress(){
-    let progressData = [];
-
-    blocks.forEach(block => {
-        const exercises = block.querySelectorAll("input");
-        let done = 0;
-
-        exercises.forEach(cb => {
-            if(cb.checked) done++;
-        });
-
-        let percent = (done / exercises.length) * 100;
-        block.querySelector(".progress").style.width = percent + "%";
-
-        progressData.push(percent);
-    });
-
-    updateChart(progressData);
-}
-
-document.querySelectorAll("input[type=checkbox]").forEach(cb => {
-    const id = cb.closest(".exercise").dataset.id;
+document.querySelectorAll("input[type=checkbox]").forEach(cb=>{
+    const id = cb.parentElement.textContent.trim();
 
     cb.checked = localStorage.getItem(id) === "true";
 
-    cb.addEventListener("change", () => {
+    if(cb.checked) cb.parentElement.classList.add("done");
+
+    cb.addEventListener("change", ()=>{
         localStorage.setItem(id, cb.checked);
-        if(cb.checked){
-            cb.parentElement.classList.add("done");
-        } else {
-            cb.parentElement.classList.remove("done");
-        }
-        updateProgress();
+        cb.parentElement.classList.toggle("done");
     });
 });
-
-// init UI state
-document.querySelectorAll("input[type=checkbox]").forEach(cb=>{
-    if(cb.checked){
-        cb.parentElement.classList.add("done");
-    }
-});
-
-updateProgress();
 </script>
 
 </body>
