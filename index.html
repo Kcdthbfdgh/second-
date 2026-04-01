@@ -1,38 +1,235 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Fitness Tracker</title>
+<title>Luxury Fitness Tracker by Valeria Zaitseva</title>
 
-<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.block {
+    background: rgba(255,255,255,0.04);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.exercise {
+    margin: 10px 0;
+    padding: 12px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+}
+
+.exercise.done {
+    background: rgba(0,255,150,0.1);
+}
+
+.progress-bar {
+    height: 6px;
+    background: #222;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg,#00ff99,#00ccff);
+}
+canvas {
+    background: #111;
+    border-radius: 12px;
+    padding: 10px;
+}
+</style>
 </head>
 
 <body>
 
 <div class="hero">
     <h1>Luxury Fitness Tracker</h1>
-    <p>Контроль. Дисциплина. Прогресс.</p>
+    <p>Автор: Valeria Zaitseva</p>
 </div>
 
 <div class="container">
 
-    <div class="block" data-block="foundation1">
-        <h2>Foundation Session I</h2>
-        <div class="progress-bar"><div class="progress"></div></div>
+<h2>📊 Progress Overview</h2>
+<canvas id="progressChart"></canvas>
 
-        <div class="exercise" data-id="f1-1"><input type="checkbox"> Goblet Squat</div>
-        <div class="exercise" data-id="f1-2"><input type="checkbox"> Lat Pulldown</div>
-        <div class="exercise" data-id="f1-3"><input type="checkbox"> Dumbbell Press</div>
-        <div class="exercise" data-id="f1-4"><input type="checkbox"> Dumbbell Row</div>
-        <div class="exercise" data-id="f1-5"><input type="checkbox"> Step-Up</div>
+<!-- TEMPLATE BLOCK EXAMPLE -->
+<div class="block" data-block="w1">
+<h2>Workout 1 — Full Body Foundation</h2>
+<div class="progress-bar"><div class="progress"></div></div>
 
-    </div>
+<div class="exercise" data-id="w1-1">
+<input type="checkbox">
+Goblet Squat (10–15 reps)<br>
+<small>Цель: ягодицы, квадрицепсы, базовая сила ног</small>
+</div>
+
+<div class="exercise" data-id="w1-2">
+<input type="checkbox">
+Lat Pulldown (8–12 reps)<br>
+<small>Цель: широчайшие мышцы спины</small>
+</div>
+
+<div class="exercise" data-id="w1-3">
+<input type="checkbox">
+Dumbbell Bench Press (8–12 reps)<br>
+<small>Цель: грудные мышцы, сила верхней части тела</small>
+</div>
+
+<div class="exercise" data-id="w1-4">
+<input type="checkbox">
+Dumbbell Row (8–12 reps)<br>
+<small>Цель: середина спины, осанка</small>
+</div>
+
+<div class="exercise" data-id="w1-5">
+<input type="checkbox">
+Step-Up (10–12 reps)<br>
+<small>Цель: баланс, ягодицы</small>
+</div>
+
+<div class="exercise" data-id="w1-6">
+<input type="checkbox">
+Shoulder Press (8–12 reps)<br>
+<small>Цель: плечи</small>
+</div>
+
+<div class="exercise" data-id="w1-7">
+<input type="checkbox">
+Triceps Pushdown (10–15 reps)<br>
+<small>Цель: трицепс</small>
+</div>
+
+<div class="exercise" data-id="w1-8">
+<input type="checkbox">
+Biceps Curl (10–15 reps)<br>
+<small>Цель: бицепс</small>
+</div>
+
+<div class="exercise" data-id="w1-9">
+<input type="checkbox">
+Plank Shoulder Tap (30–60 sec)<br>
+<small>Цель: кора, стабилизация</small>
+</div>
+
+<div class="exercise" data-id="w1-10">
+<input type="checkbox">
+Hanging Knee Raise (10–15 reps)<br>
+<small>Цель: нижний пресс</small>
+</div>
 
 </div>
 
-<script src="app.js"></script>
+<!-- (СЖАТО: остальные тренировки аналогично структурируются) -->
+<div class="block" data-block="w2">
+<h2>Workout 2 — Lower Body Strength</h2>
+
+<div class="exercise" data-id="w2-1"><input type="checkbox"> Bulgarian Split Squat (8–12) <br><small>Ягодицы, баланс</small></div>
+<div class="exercise" data-id="w2-2"><input type="checkbox"> Romanian Deadlift (8–12)<br><small>Задняя поверхность бедра</small></div>
+<div class="exercise" data-id="w2-3"><input type="checkbox"> Hip Thrust (10–15)<br><small>Ягодицы</small></div>
+<div class="exercise" data-id="w2-4"><input type="checkbox"> Leg Press (10–15)<br><small>Квадрицепсы</small></div>
+<div class="exercise" data-id="w2-5"><input type="checkbox"> Step-Up (10–12)<br><small>Баланс</small></div>
+<div class="exercise" data-id="w2-6"><input type="checkbox"> Cable Kickback (12–15)<br><small>Ягодицы</small></div>
+<div class="exercise" data-id="w2-7"><input type="checkbox"> Sumo Squat (10–15)<br><small>Внутренняя поверхность бедра</small></div>
+<div class="exercise" data-id="w2-8"><input type="checkbox"> Wall Sit (60 sec)<br><small>Выносливость ног</small></div>
+<div class="exercise" data-id="w2-9"><input type="checkbox"> Jump Squat (10–12)<br><small>Взрывная сила</small></div>
+<div class="exercise" data-id="w2-10"><input type="checkbox"> Calf Raises (15–20)<br><small>Икры</small></div>
+
+</div>
+
+</div>
+
+<script>
+const blocks = document.querySelectorAll(".block");
+
+function updateChart(data){
+    chart.data.datasets[0].data = data;
+    chart.update();
+}
+
+const ctx = document.getElementById('progressChart');
+
+let chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["W1","W2"],
+        datasets: [{
+            label: "Progress %",
+            data: [0,0]
+        }]
+    }
+});
+
+function updateProgress(){
+    let progressData = [];
+
+    blocks.forEach(block => {
+        const exercises = block.querySelectorAll("input");
+        let done = 0;
+
+        exercises.forEach(cb => {
+            if(cb.checked) done++;
+        });
+
+        let percent = (done / exercises.length) * 100;
+        block.querySelector(".progress").style.width = percent + "%";
+
+        progressData.push(percent);
+    });
+
+    updateChart(progressData);
+}
+
+document.querySelectorAll("input[type=checkbox]").forEach(cb => {
+    const id = cb.closest(".exercise").dataset.id;
+
+    cb.checked = localStorage.getItem(id) === "true";
+
+    cb.addEventListener("change", () => {
+        localStorage.setItem(id, cb.checked);
+        if(cb.checked){
+            cb.parentElement.classList.add("done");
+        } else {
+            cb.parentElement.classList.remove("done");
+        }
+        updateProgress();
+    });
+});
+
+// init UI state
+document.querySelectorAll("input[type=checkbox]").forEach(cb=>{
+    if(cb.checked){
+        cb.parentElement.classList.add("done");
+    }
+});
+
+updateProgress();
+</script>
+
 </body>
 </html>
